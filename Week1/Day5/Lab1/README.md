@@ -10,6 +10,7 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** Check the current state of the repository, including staged, unstaged, and untracked files.
 **Example Usage:** `git status`
 **Application Image:**
+
 ![Applying git status command](D1.png)
 
 ---
@@ -18,6 +19,7 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** Create a new branch or view existing branches in the repository.
 **Example Usage:** `git branch`
 **Application Image:**
+
 ![Applying git branch command](D2.png)
 
 ---
@@ -26,7 +28,8 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** Review specific file changes and see exactly what was modified before staging.
 **Example Usage:** `git diff`
 **Application Image:**
-![Applying git diff command](image_name_here.png)
+
+![Applying git diff command](D3.png)
 
 ---
 
@@ -34,7 +37,8 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** Stage changes (add modified or new files to the staging area) to prepare them for a commit.
 **Example Usage:** `git add .`
 **Application Image:**
-![Applying git add command](image_name_here.png)
+
+![Applying git add command](D4.png)
 
 ---
 
@@ -42,7 +46,8 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** Commit the staged changes to the repository's history with a descriptive message.
 **Example Usage:** `git commit -m "Your commit message"`
 **Application Image:**
-![Applying git commit command](image_name_here.png)
+
+![Applying git commit command](D5.png)
 
 ---
 
@@ -50,7 +55,8 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** A shortcut command to automatically stage all tracked, modified files and commit them in a single step.
 **Example Usage:** `git commit -am "Your commit message"`
 **Application Image:**
-![Applying git commit -am command](image_name_here.png)
+
+![Applying git commit -am command](D6.png)
 
 ---
 
@@ -58,7 +64,8 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** View the chronological commit history of the repository.
 **Example Usage:** `git log`
 **Application Image:**
-![Applying git log command](image_name_here.png)
+
+![Applying git log command](D7.png)
 
 ---
 
@@ -66,6 +73,8 @@ This lab focuses on practicing the basic Git workflow. It covers checking reposi
 **Description:** Undo the very latest commit while keeping the file changes in the working directory.
 **Example Usage:** `git reset HEAD~1`
 **Application Image:**
-![Applying git reset command](image_name_here.png)
+
+![Applying git reset command](D8.png)
+
 
 ---
