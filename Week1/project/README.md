@@ -16,6 +16,6 @@ This file documents the steps taken during the project execution, from creating 
 ### 2. Commit and Push to GitHub
 **Description:** After that, I added a commit for the changes and successfully pushed the project to GitHub.
 **Application Image:**
-![Commit and Push](v2.png)
+![Commit and Push](p2.png)
 
 ---
