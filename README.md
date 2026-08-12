@@ -1,4 +1,4 @@
-# 🚀 Tuwaiq Academy, Pyhton-WebBootcamp
+# 🚀 Tuwaiq Academy, Python-WebBootcamp
 
 Welcome to my repository! This space is dedicated to documenting and submitting all my assignments and hands-on labs for Tuwaiq Academy.
 
@@ -15,3 +15,4 @@ Here is a structured list of my completed work:
 | :--- | :--- | :---: |
 | [Week 1](./Week1) | Repository setup, Git fundamentals, Branching, and Merging. | ✅ |
 | [Week 2](./Week2) | Python fundamentals, conditional logic, validation, and loops. | ✅ |
+| [Week 3](./Week3) | Python Functions, Variable Scope, and Parameters. | ✅ |
