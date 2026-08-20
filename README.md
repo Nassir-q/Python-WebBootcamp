@@ -13,6 +13,7 @@ Here is a structured list of my completed work:
 
 | Week | Description | Status |
 | :--- | :--- | :---: |
+| [Resources](./Resources) | Official learning roadmaps and unit summaries. | 🌟 |
 | [Week 1](./Week1) | Repository setup, Git fundamentals, Branching, and Merging. | ✅ |
 | [Week 2](./Week2) | Python fundamentals, conditional logic, validation, and loops. | ✅ |
 | [Week 3](./Week3) | Operators, String Methods, Comprehensions, Mutability, and Object Identity. | ✅ |
