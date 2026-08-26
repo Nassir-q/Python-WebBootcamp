@@ -18,3 +18,4 @@ Here is a structured list of my completed work:
 | [Week 2](./Week2) | Python fundamentals, conditional logic, validation, and loops. | ✅ |
 | [Week 3](./Week3) | Operators, String Methods, Comprehensions, Mutability, and Object Identity. | ✅ |
 | [Week 4](./Week4) | OOP, File Handling (CSV/JSON), Exceptions, and UML System Design. | ✅ |
+| [Week 5](./Week5) | HTML structure, CSS styling, Web Forms, and UI Design basics. | ✅ |
