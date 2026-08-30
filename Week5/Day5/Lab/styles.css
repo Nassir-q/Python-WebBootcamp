@@ -1,0 +1,86 @@
+button{
+    transform: background-color .3s ease, transform .3s ease;
+
+}
+button:hover{
+    transform: translateY(-4px);
+    transition: transform .25s ease, background .25s ease;
+
+}
+
+.cta{
+
+    animation: fadeIn 1s ease forwards;
+    background: rgb(255,190.50);
+    
+}
+.cta:hover, .cta:focus{
+ transform: translateY(-4px); 
+ background: red;
+ transform: translateY(-4px);
+ transform: scale(2.00); 
+ transform: rotate(90deg); 
+ transform: translate(10px, -6px); 
+ transform: skew(80deg); 
+ } 
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    gap: 50px; 
+    margin-top: 150px; 
+}
+ @keyframes fadeIn{
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1;transform: translateY(0);}
+}
+.cta{
+    animation: fadeIn 1s ease forwards;
+} 
+
+ @keyframes spin{
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1;transform: translateY(0);}
+}
+
+.loader{
+    animation: spin .8s linear infinite;
+} 
+
+
+ 
+/* lab  */
+
+
+     @keyframes slidIn{
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1;transform: translateY(0);}
+}
+
+.hero-title{
+    animation: slidIn .9s ease forwards;
+}
+
+ @keyframes fadeIn{
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1;transform: translateY(0);}
+}
+
+.hero-text{
+    animation: fadeIn 1s ease .25s forwards;
+}
+.cta{
+
+    animation: fadeIn 1s ease forwards;
+    background: rgb(255,190.50);
+    
+}
+.cta:hover, .cta:focus{
+    transform: translateY(-4px); 
+    
+ transform: translateY(-4px);
+transform: scale(2.00); 
+ transform: rotate(90deg); 
+ transform: translate(10px, -6px); 
+ transform: skew(80deg); 
+} 
