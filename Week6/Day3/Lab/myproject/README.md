@@ -28,8 +28,6 @@ This structural diagram illustrates the Data Flow in the `library` app, from the
 🧑‍💻 [User / Browser] <- 7. Final HTTP Response (Rendered Page) 
 ```
 
-
-
 ![Applying pip install django command](p1.png)
 
 
