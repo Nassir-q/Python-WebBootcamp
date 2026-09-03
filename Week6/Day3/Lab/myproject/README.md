@@ -25,7 +25,8 @@ This structural diagram illustrates the Data Flow in the `library` app, from the
        │
        │ 6. Combines HTML + CSS + Django Variables
        ▼
-🧑‍💻 [User / Browser] <- 7. Final HTTP Response (Rendered Page) ```
+🧑‍💻 [User / Browser] <- 7. Final HTTP Response (Rendered Page) 
+```
 
 
 
