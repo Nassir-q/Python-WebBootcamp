@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ movie.title }} - Details{% endblock %}
+
+{% block content %}
+<section id="movie-detail" style="padding: 120px 20px 80px; display: flex; flex-direction: column; align-items: center; min-height: 80vh;">
+    
+    {% if movie %}
+        
+        <div style="background-color: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 900px; width: 100%; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: flex-start;">
+            
+            
+            <div style="flex: 1 1 300px; max-width: 350px;">
+                <img src="{% static 'images/' %}{{ movie.image }}" alt="{{ movie.title }} Poster" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.8);">
+            </div>
+            
+            
+            <div style="flex: 2 1 300px; text-align: left;">
+                <h2 style="margin-bottom: 20px; text-align: left;">{{ movie.title }}</h2>
+                <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Year:</strong> {{ movie.year }}</p>
+                <p style="font-size: 1.2em; margin-bottom: 20px;"><strong>Rating:</strong> {{ movie.rating }}/10 ⭐</p>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ccc;">
+                    <strong style="color: white;">Story:</strong> <br> 
+                    {{ movie.description }}
+                </p>
+                
+                
+                <a href="{% url 'movie_list' %}#movies" style="display: inline-block; margin-top: 30px; padding: 12px 25px; background-color: var(--accent-color); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: transform 0.3s ease, background-color 0.3s ease;">
+                    ⬅️ Back to Movies
+                </a>
+            </div>
+            
+        </div>
+    {% else %}
+        <h1 style="color: red;">Movie not found!</h1>
+        <br>
+        <a href="{% url 'movie_list' %}#movies" style="color: #9ca3af; text-decoration: none; font-size: 1.2em;">⬅️ Back to Movies</a>
+    {% endif %}
+    
+</section>
+{% endblock %}

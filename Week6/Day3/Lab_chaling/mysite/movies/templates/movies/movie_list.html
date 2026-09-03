@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}NY Reviews - Home{% endblock %}
+
+{% block content %}
+    <section id="hero">
+        <div class="hero-text">
+            <h1>Find Your Next Favorite Movie</h1>
+            <p>My personal reviews and top ratings for the best movies</p>
+            </div>
+        <img src="{% static 'images/Its Time Film.gif' %}" alt="Hero background animation" class="hero-image">
+    </section>
+    
+    <section id="About">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>"Hi, I’m Nasser. the voice behind NY Reviews. I created this space to share my passion for storytelling and filmmaking. Explore my curated ratings, personal insights, and in-depth reviews to find your next unforgettable movie night."</p>
+            </div>
+            <img src="{% static 'images/absolute cinema.gif' %}" alt="Cinema and movie review representation">
+        </div>
+    </section>
+
+    <section id="movies">
+        <h2>Top Rated Movies For Me</h2>
+        
+        <div class="movies-grid">
+            {% for movie in movies %}
+                <article class="card">
+                    <h3>{{ movie.title }}</h3>
+                    <p>Year: {{ movie.year }}</p>
+                    <p>Rating: {{ movie.rating }}/10 ⭐</p>
+                    <img src="{% static 'images/' %}{{ movie.image }}" alt="{{ movie.title }} Movie Poster"> 
+                    <p>{{ movie.description|truncatewords:15 }}</p>
+                    
+                    <br>
+                    <a href="{% url 'movie_detail' movie.id %}" style="color:var(--accent-color); text-decoration: none; font-weight: bold;">View Details</a>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
