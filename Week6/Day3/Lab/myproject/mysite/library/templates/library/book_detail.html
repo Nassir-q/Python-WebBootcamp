@@ -1,0 +1,16 @@
+{% extends 'library/base.html' %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+    {% if book %}
+        <h1 style="color: #f3f4f6;">{{ book.title }}</h1>
+        <h3>Author: <span style="color: #d4af37;">{{ book.author }}</span></h3>
+        <p>Total Pages: {{ book.pages }} pages.</p>
+    {% else %}
+        <h1 style="color: red;">Book not found!</h1>
+    {% endif %}
+    
+    <br>
+    <a href="{% url 'books_list' %}" style="color: #cad6ea;">⬅️ Back to Books List</a>
+{% endblock %}

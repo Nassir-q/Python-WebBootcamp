@@ -1,0 +1,16 @@
+{% extends 'library/base.html' %}
+
+{% block title %}All Books{% endblock %}
+
+{% block content %}
+    <h1 style="color: #f3f4f6;">Available Books</h1>
+    <ul>
+        {% for book in books %}
+            <li style="margin-bottom: 10px;">
+                <a href="{% url 'book_detail' book.id %}" style="color: #d4af37; text-decoration: none; font-size: 1.2em;">
+                    {{ book.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
