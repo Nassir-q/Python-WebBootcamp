@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Blog Posts</h1>
+    <ul>
+        <li><a href="{% url 'blog:detail' post_id=1 %}">Post 1</a></li>
+        <li><a href="{% url 'blog:detail' post_id=2 %}">Post 2</a></li>
+    </ul>
+
+    <h2>Categories</h2>
+    <ul>
+        <li><a href="{% url 'blog:category' category_name='tech' %}">Tech</a></li>
+        <li><a href="{% url 'blog:category' category_name='sports' %}">Sports</a></li>
+    </ul>
+{% endblock %}
