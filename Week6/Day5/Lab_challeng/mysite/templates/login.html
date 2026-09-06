@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-md-5 mx-auto">
+        <div class="card shadow-sm border-0 p-4">
+            <h2 class="fw-bold text-primary mb-3 text-center">User Login</h2>
+            <p class="text-muted text-center mb-4">Access your Tech Hub account to manage your courses and profile.</p>
+
+            
+            <form method="POST" onsubmit="event.preventDefault(); window.location.href='{% url 'dashboard:home' %}';">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label fw-semibold">Username or Email</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label fw-semibold">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                    <a href="{% url 'dashboard:home' %}" class="btn btn-outline-secondary">Back to Home</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

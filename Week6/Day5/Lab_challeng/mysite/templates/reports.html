@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-md-10 mx-auto">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="fw-bold text-primary mb-1">System Analytics & Reports</h2>
+                <p class="text-muted mb-0">Overview of platform performance, course enrollments, and revenue metrics.</p>
+            </div>
+            <a href="{% url 'dashboard:home' %}" class="btn btn-outline-secondary">Back to Dashboard</a>
+        </div>
+
+        
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 p-3 bg-white">
+                    <h6 class="text-muted fw-semibold">Total Enrollments</h6>
+                    <h3 class="fw-bold text-dark mt-2">1,245</h3>
+                    <span class="text-success small fw-bold">+12% from last month</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 p-3 bg-white">
+                    <h6 class="text-muted fw-semibold">Active Courses</h6>
+                    <h3 class="fw-bold text-dark mt-2">18</h3>
+                    <span class="text-primary small fw-bold">4 tracks available</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 p-3 bg-white">
+                    <h6 class="text-muted fw-semibold">Total Revenue</h6>
+                    <h3 class="fw-bold text-dark mt-2">$24,850</h3>
+                    <span class="text-success small fw-bold">+8% this week</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- جدول الأنشطة الأخيرة -->
+        <div class="card shadow-sm border-0 p-4">
+            <h4 class="fw-bold text-dark mb-3">Recent Transactions</h4>
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Student</th>
+                            <th>Course</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1024</td>
+                            <td>Nasser Q.</td>
+                            <td>Python Programming</td>
+                            <td>$250.00</td>
+                            <td><span class="badge bg-success">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1023</td>
+                            <td>Abdullah A.</td>
+                            <td>Full-Stack Web Dev</td>
+                            <td>$199.00</td>
+                            <td><span class="badge bg-success">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1022</td>
+                            <td>Mohammed K.</td>
+                            <td>UI/UX Design</td>
+                            <td>$129.00</td>
+                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

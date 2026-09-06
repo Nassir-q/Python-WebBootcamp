@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row mt-5">
+    <div class="col-md-8 mx-auto text-center">
+        <h1 class="display-4 fw-bold">Welcome to Tech Hub</h1>
+        <p class="lead mt-3 text-muted">Your central dashboard for managing courses, payments, and activities.</p>
+        <hr class="my-4">
+        
+        
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <a href="{% url 'courses:list' %}" class="btn btn-primary btn-lg px-4">Browse Courses</a>
+            <a href="{% url 'dashboard:reports' %}" class="btn btn-outline-secondary btn-lg px-4">View Reports</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
