@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    
+    <div class="cards-container">
+        {% for service in services %}
+            
+            {% include 'components/card.html' with service_name=service %}
+        {% empty %}
+            <p>No services available right now.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

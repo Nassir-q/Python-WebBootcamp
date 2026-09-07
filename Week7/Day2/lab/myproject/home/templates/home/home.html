@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+    
+    <h1>Welcome to {{ title|title }}</h1>
+
+    
+    {% if is_active %}
+        <p>Your account is active and ready!</p>
+    {% else %}
+        <p>Please activate your account.</p>
+    {% endif %}
+{% endblock %}
