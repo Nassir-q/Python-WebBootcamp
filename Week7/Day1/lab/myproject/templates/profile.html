@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Profile Page</h2>
+    
+   
+    <p>Welcome, <strong>{{ username }}</strong>!</p>
+
+    
+    {% if username == 'Guest' %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'accounts:register' %}"><button>Register</button></a>
+        <a href="{% url 'accounts:login' %}"><button>Login</button></a>
+   {% else %}
+        <p>You are successfully logged in!</p>
+        <a href="{% url 'accounts:status' %}"><button style="background-color: #17a2b8;">Check Status JSON</button></a>
+        
+        <!-- زر تسجيل الخروج الجديد -->
+        <a href="{% url 'accounts:logout' %}"><button style="background-color: #dc3545;">Logout</button></a>
+    {% endif %}
+
+{% endblock %}

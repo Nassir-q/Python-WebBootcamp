@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Login</h2>
+
+    
+    {% if error %}
+        <div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; text-align: center;">
+            <p style="margin: 0 0 10px 0;">{{ error }}</p>
+            <a href="{% url 'accounts:register' %}" style="color: #004085; font-weight: bold; text-decoration: underline;">
+               Click here to register.
+            </a>
+        </div>
+    {% endif %}
+
+    
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter Username" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}
