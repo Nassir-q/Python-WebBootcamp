@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    
+    {% if uploaded_image %}
+        <img src="{{ uploaded_image }}" alt="User Avatar" width="200">
+    {% else %}
+        <img src="{% static 'images/default-avatar.png' %}" alt="Default Avatar" width="200">
+    {% endif %}
+
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br><br>
+        <input type="file" name="avatar" required>
+        <button type="submit">Upload Profile Picture</button>
+    </form>
+</body>
+</html>
