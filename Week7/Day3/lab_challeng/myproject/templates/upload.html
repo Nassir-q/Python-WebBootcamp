@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Instagram</title>
+    
+    <link rel="stylesheet" href="{% static 'css/styl.css' %}">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="upload-section">
+            <h2>Create New Post</h2>
+            {% if error_msg %}
+                <p class="error">{{ error_msg }}</p>
+            {% endif %}
+            
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Your username" required>
+                <textarea name="description" placeholder="Write a caption..." required></textarea>
+                <input type="file" name="image" required>
+                <button type="submit">Share Post</button>
+            </form>
+        </div>
+
+        
+        <div class="feed-section">
+            {% for post in posts %}
+                <div class="post-card">
+                    <div class="post-header">
+                        <strong>@{{ post.username }}</strong>
+                    </div>
+                    <img src="{{ post.image.url }}" alt="Post image" class="post-image">
+                    
+                    <div class="post-actions">
+                        <a href="{% url 'like_post' post.id %}" class="like-btn">❤️ Like</a>
+                        
+                        
+                        <span class="likes-count">
+                            {% if post.likes == 0 %}
+                                Be the first to like this
+                            {% else %}
+                                {{ post.likes }} likes
+                            {% endif %}
+                        </span>
+                    </div>
+                    
+                    <div class="post-desc">
+                        <strong>{{ post.username }}</strong> {{ post.description }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
