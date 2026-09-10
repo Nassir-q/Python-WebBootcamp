@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <a href="{% url 'product_list' %}" class="back-link">← Back to Catalog</a>
+    
+    <h2>{{ product.name }} - ${{ product.price }}</h2>
+    
+    <div class="tabs">
+        <a href="{% url 'product_detail' product.id %}?tab=details" class="{% if tab == 'details' %}active{% endif %}">Details</a>
+        <a href="{% url 'product_detail' product.id %}?tab=reviews" class="{% if tab == 'reviews' %}active{% endif %}">Reviews</a>
+        <a href="{% url 'product_detail' product.id %}?tab=shipping" class="{% if tab == 'shipping' %}active{% endif %}">Shipping</a>
+    </div>
+
+    <div class="tab-content">
+        {% if tab == 'reviews' %}
+            <p><span>Reviews:</span> {{ product.reviews }}</p>
+        {% elif tab == 'shipping' %}
+            <p><span>Shipping Info:</span> {{ product.shipping }}</p>
+        {% else %}
+            <p><span>Description:</span> {{ product.description }}</p>
+            <p><span>Rating:</span> ⭐{{ product.rating }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

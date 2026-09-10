@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Explorer</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form method="GET">
+        <input type="text" name="q" value="{{ q }}" placeholder="Search products...">
+        
+        <select name="category">
+            <option value="">All Categories</option>
+            <option value="electronics" {% if category == 'electronics' %}selected{% endif %}>Electronics</option>
+            <option value="books" {% if category == 'books' %}selected{% endif %}>Books</option>
+            <option value="home" {% if category == 'home' %}selected{% endif %}>Home</option>
+        </select>
+
+        <input type="number" name="min_price" value="{{ min_price }}" placeholder="Min Price..." step="0.01">
+
+        <select name="sort">
+            <option value="name" {% if sort == 'name' %}selected{% endif %}>Sort by Name</option>
+            <option value="price" {% if sort == 'price' %}selected{% endif %}>Sort by Price</option>
+            <option value="rating" {% if sort == 'rating' %}selected{% endif %}>Sort by Rating</option>
+        </select>
+
+        <button type="submit">Filter & Sort</button>
+    </form>
+
+    {% for product in page_obj %}
+        <div class="card">
+          
+            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+            <p>Category: {{ product.category|title }} | Price: ${{ product.price }} | Rating: ⭐{{ product.rating }}</p>
+        </div>
+    {% empty %}
+        <p style="color: #ef4444; text-align: center; font-weight: bold;">No products found.</p>
+    {% endfor %}
+
+    
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}&q={{ q }}&category={{ category }}&min_price={{ min_price }}&sort={{ sort }}">← Prev</a>
+        {% endif %}
+        
+        <span style="color: #94a3b8;">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&q={{ q }}&category={{ category }}&min_price={{ min_price }}&sort={{ sort }}">Next →</a>
+        {% endif %}
+    </div>
+</body>
+</html>
