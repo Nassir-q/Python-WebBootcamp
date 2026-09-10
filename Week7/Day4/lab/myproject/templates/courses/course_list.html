@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses Catalog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form method="GET">
+        <input type="text" name="q" value="{{ query }}" placeholder="Search courses...">
+        <select name="category">
+            <option value="">All Categories</option>
+            <option value="web" {% if category == 'web' %}selected{% endif %}>Web Development</option>
+            <option value="programming" {% if category == 'programming' %}selected{% endif %}>Programming</option>
+            <option value="design" {% if category == 'design' %}selected{% endif %}>UI/UX Design</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    {% for course in page_obj %}
+        <div class="card">
+            <a href="{% url 'course_detail' course.id %}">{{ course.title }}</a>
+            <p>Category: {{ course.category|title }} | Difficulty: {{ course.difficulty|title }}</p>
+        </div>
+    {% empty %}
+        <p style="color: #ef4444; text-align: center; font-weight: bold;">No courses found.</p>
+    {% endfor %}
+
+    
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}&q={{ query }}&category={{ category }}">← Prev</a>
+        {% endif %}
+        <span style="color: #94a3b8;">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&q={{ query }}&category={{ category }}">Next →</a>
+        {% endif %}
+    </div>
+</body>
+</html>
