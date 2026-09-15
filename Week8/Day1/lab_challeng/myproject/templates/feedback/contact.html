@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; background-color: #f8f9fa; }
+        .form-container { background: white; padding: 30px; border-radius: 8px; max-width: 500px; margin: 0 auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        
+        /* Default styling for all inputs */
+        input, textarea, select { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+        }
+        
+        /* Step 8: CSS class to highlight invalid inputs */
+        .error-input { 
+            border: 2px solid #dc3545 !important; 
+            background-color: #fff8f8; 
+        }
+        
+        /* Styling for the error text below the field */
+        .error-text { 
+            color: #dc3545; 
+            font-size: 0.85em; 
+            margin-top: 5px; 
+            display: block; 
+        }
+        
+        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 1em; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Submit Feedback</h2>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Step 8: Manually render fields -->
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                
+                <!-- If the field has errors, add the 'error-input' CSS class -->
+                {% if field.errors %}
+                    {{ field.as_widget.attrs.class|default:""|add:" error-input" }}
+                    <input type="{{ field.field.widget.input_type }}" 
+                           name="{{ field.name }}" 
+                           id="{{ field.id_for_label }}" 
+                           class="error-input" 
+                           value="{{ field.value|default_if_none:'' }}">
+                    
+                    <!-- Display the specific error message -->
+                    <span class="error-text">{{ field.errors.0 }}</span>
+                {% else %}
+                    <!-- Render normally if no errors -->
+                    {{ field }}
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+</body>
+</html>
