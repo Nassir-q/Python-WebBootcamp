@@ -279,5 +279,7 @@ skills ={"Python", "Django", "Flask", "FastAPI", "Java"}
 skills.add("CSS")
 skills.add("HTML")
 skills.discard("CSS")
-skills.remove("Java")
+skills.remove("PHP")
 print(skills)
+
+

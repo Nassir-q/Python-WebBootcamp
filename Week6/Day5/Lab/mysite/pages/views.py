@@ -4,6 +4,10 @@ from django.shortcuts import render
 
 
 def home_view(request):
+    print(request)
+    print(request.method)
+    print(request.GET)
+    print(request.path)
     return render(request, 'home.html')
 
 

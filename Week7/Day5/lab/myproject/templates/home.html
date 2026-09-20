@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preferences & Cart Lab</title>
+    <style>
+        body { transition: background-color 0.3s, color 0.3s; }
+        body.light { background-color: #ffffff; color: #000000; }
+        body.dark { background-color: #0F172A; color: #ffffff; }
+        .container { padding: 50px; font-family: sans-serif; }
+        .btn { padding: 10px 20px; margin-right: 10px; cursor: pointer; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; display: inline-block; }
+    </style>
+</head>
+<body class="{{ theme }}">
+    <div class="container">
+        <h1>Preferences and Cart</h1>
+        <p>Active Theme: <strong>{{ theme }}</strong></p>
+        
+        <!-- Buttons to trigger the set_theme URL -->
+        <a href="{% url 'set_theme' 'light' %}" class="btn" style="background-color: white; color: black;">Light Mode</a>
+        <a href="{% url 'set_theme' 'dark' %}" class="btn" style="background-color: #333; color: white;">Dark Mode</a>
+
+        <hr style="margin: 30px 0; border: 1px solid #ccc;">
+        
+        <h2>Shopping Cart</h2>
+        <p>Items in cart: <strong>{{ cart_count }}</strong></p>
+        <p style="color: #888;">Cart Contents: {{ cart }}</p>
+        
+        <!-- Buttons to trigger cart actions -->
+        <a href="{% url 'add_to_cart' 101 %}" class="btn" style="background-color: #28a745; color: white; border: none;">Add Product 101</a>
+        <a href="{% url 'clear_cart' %}" class="btn" style="background-color: #dc3545; color: white; border: none;">Clear Cart</a>
+    </div>
+</body>
+</html>

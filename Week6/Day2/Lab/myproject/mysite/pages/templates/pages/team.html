@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Team</title>
+</head>
+<body>
+    <h1>Team</h1>
+    <nav>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'faq' %}">FAQ</a>
+        <a href="{% url 'team' %}">Team</a>
+    </nav>
+    <p>Meet our awesome team.</p>
+</body>
+</html>
