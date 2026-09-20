@@ -20,3 +20,4 @@ Here is a structured list of my completed work:
 | [Week 4](./Week4) | OOP, File Handling (CSV/JSON), Exceptions, and UML System Design. | ✅ |
 | [Week 5](./Week5) | HTML structure, CSS styling, Web Forms, and UI Design basics. | ✅ |
 | [Week 6](./Week6) | Django framework, MVT architecture, URL routing, templates, and CBVs. | ✅ |
+| [Week 7](./Week7) | HTTP GET/POST methods, Django Challenge Lab, and Mini Instagram UI project. | ✅ |
